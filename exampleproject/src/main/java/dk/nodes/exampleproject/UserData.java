@@ -1,7 +1,5 @@
 package dk.nodes.exampleproject;
 
-import java.io.Serializable;
-
 import dk.nodes.data.annotation.Data;
 import dk.nodes.data.annotation.Mode;
 import dk.nodes.data.annotation.Persistence;
@@ -11,7 +9,9 @@ import dk.nodes.data.annotation.Persistence;
  */
 @Data(
         persistence = Persistence.GSON,
-        mode = Mode.FILE
+        mode = Mode.SHAREDPREFERENCES
 )
-public class UserData implements Serializable {
+public class UserData {
+    public String token = "";
+    public String userName = "";
 }
