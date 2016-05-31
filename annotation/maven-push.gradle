@@ -15,7 +15,7 @@ def _description = 'Annotations for the Data framework from Nodes'
 
 
 afterEvaluate { project ->
-    uploadArchives {
+    uploadAnnotationArchives {
         repositories {
             mavenDeployer {
                 beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
@@ -34,7 +34,7 @@ afterEvaluate { project ->
 
                 pom.project {
                     name _name
-                    packaging 'aar'
+                    packaging 'jar'
                     description _description
                     url 'https://github.com/nodes-android/data'
                     inceptionYear '2016'
@@ -69,7 +69,7 @@ afterEvaluate { project ->
     }
 
     signing {
-        required { gradle.taskGraph.hasTask("uploadArchives") }
+        required { gradle.taskGraph.hasTask("uploadAnnotationArchives") }
         sign configurations.archives
     }
 
