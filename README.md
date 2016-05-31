@@ -5,14 +5,14 @@ Persistence framework for Android with output methods for the time being Gson or
 ## Example
 
 Consider the following class:
-```
+```java
 public class UserData {
     public String token = "";
     public String userName = "";
 }
 ```
 We can either serialize it to disk:
-```
+```java
 @Data(
         persistence = Persistence.SERIALIZATION,
         mode = Mode.FILE
@@ -23,7 +23,7 @@ public class UserData implements Serializable {
 }
 ```
 Or save it to `SharedPreferences`:
-```
+```java
 @Data(
         persistence = Persistence.GSON,
         mode = Mode.SHAREDPREFERENCES
@@ -34,7 +34,7 @@ public class UserData {
 }
 ```
 Both of these classes will generate a Manager class which can `load` and `save`:
-```
+```java
 UserDataManager userDataManager = new UserDataManager(this.getApplicationContext());
 UserData userData = userDataManager.load();
 ...
