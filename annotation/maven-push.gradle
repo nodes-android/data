@@ -15,7 +15,7 @@ def _description = 'Annotations for the Data framework from Nodes'
 
 
 afterEvaluate { project ->
-    uploadAnnotationArchives {
+    uploadArchives {
         repositories {
             mavenDeployer {
                 beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
@@ -69,7 +69,7 @@ afterEvaluate { project ->
     }
 
     signing {
-        required { gradle.taskGraph.hasTask("uploadAnnotationArchives") }
+        required { gradle.taskGraph.hasTask("uploadArchives") }
         sign configurations.archives
     }
 
