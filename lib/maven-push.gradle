@@ -4,7 +4,7 @@ def _ossrhPassword = this.properties['NEXUS_PASSWORD']
 
 // Artifact settings
 def _group = 'dk.nodes.data'
-def _version = '0.2'
+def _version = '0.3'
 def _archivesBaseName = 'processor'
 
 def _name = 'Data annotation processor'

@@ -155,7 +155,7 @@ public class CodeGenerator {
                         "try {\n" +
                         "\tgson = new Gson();\n" +
                         "\tsharedPreferences = context.getSharedPreferences(\"appprefs\", Context.MODE_PRIVATE);\n" +
-                        "\tString s = gson.toJson(object);\n" +
+                        "\tString s = gson.toJson(data);\n" +
                         "\tSharedPreferences.Editor editor = sharedPreferences.edit();\n" +
                         "\teditor.putString(\"" + annotatedClass.getKey() + "\", s);\n" +
                         "\teditor.commit();\n" +
